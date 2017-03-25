@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
+    tools:context=".ProductEditActivity">
+
+
+    <!-- Product Name category -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/product_label"
+            android:textColor="@color/fontColor"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/edit_product_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/hint_product_name"
+            android:inputType="textCapWords"
+            android:textColor="@color/fontColor"
+            android:textSize="18sp" />
+    </LinearLayout>
+    <!-- Price category -->
+    <LinearLayout
+        android:id="@+id/container_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/label_weight_units"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/hint_product_price"
+                android:textColor="@color/fontColor"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edit_product_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:hint="@string/unit_product_price"
+                android:inputType="number"
+                android:textColor="@color/fontColor" />
+        </LinearLayout>
+    </LinearLayout>
+    <!-- Quantity category -->
+    <LinearLayout
+        android:id="@+id/container_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/label_quantity_units"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/unit_product_quantity"
+            android:textColor="@color/fontColor"
+            android:textSize="18sp" />
+        <!-- Decrease quantity button-->
+        <Button
+            android:id="@+id/decrement_quantity"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="16dp"
+            android:onClick="subOneFromQuantity"
+            android:text="@string/decrease_quantity"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp" />
+
+
+        <EditText
+            android:id="@+id/edit_product_quantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:hint="@string/hint_product_quantity"
+            android:inputType="number"
+            android:textColor="@color/fontColor" />
+
+
+        <!-- Increase quantity button-->
+        <Button
+            android:id="@+id/increment_quantity"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:width="16dp"
+            android:onClick="addOneToQuantity"
+            android:text="@string/increase_quantity"
+            android:textAppearance="?android:textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:layout_marginLeft="16dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:orientation="horizontal">
+
+
+        <Button
+            android:id="@+id/uploadButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:text="@string/upload_image"
+            android:textColor="@android:color/white"
+            android:background="@color/editorColorPrimary"
+            android:layout_marginRight="16dp" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="0dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:background="@drawable/image_style"
+            android:scaleType="centerInside" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="16dp"
+        android:orientation="horizontal">
+
+        <!-- Label -->
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/fontColor"
+            android:textSize="18sp"
+            android:text="@string/label_supplier"
+            />
+
+
+
+            <!-- Contact field -->
+            <EditText
+                android:id="@+id/edit_supplier_contact"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/fontColor"
+                android:textSize="18sp"
+                android:hint="@string/hint_supplier_contact"
+                android:inputType="number"
+                android:background="@drawable/edittextstyle"/>
+
+
+        </LinearLayout>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+    android:paddingTop="16dp"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/order_more"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:onClick="orderProduct"
+        android:text="@string/button_order_product"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white" />
+    <Button
+        android:id="@+id/delete_button"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/action_delete"
+        android:onClick="deleteProduct"
+        android:textAllCaps="true"
+        android:textColor="@android:color/white" />
+    <TextView
+        android:id="@+id/image_uri"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/transparent"
+        tools:text="Image Uri" />
+    </LinearLayout>
+</LinearLayout>
